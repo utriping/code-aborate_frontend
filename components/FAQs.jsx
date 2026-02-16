@@ -30,7 +30,7 @@ const FAQs = () => {
     },
   ];
   return (
-    <section className='w-full w-[50%] p-7 mt-5 '>
+    <section className="w-full w-[50%] p-7 mt-5 ">
       <div className=" text-[#B10F2E]">
         <h2 className=" text-4xl md:text-6xl font-bold text-[#B10F2E] mb-5 text-center">
           FAQs
@@ -39,7 +39,7 @@ const FAQs = () => {
           type="single"
           collapsible
           defaultValue="item-1"
-          className="border-2 p-3"
+          className="border-2 border-[#B10F2E] p-3"
         >
           {items.map((element, index) => (
             <AccordionItem key={index} value={`item-${index}`}>

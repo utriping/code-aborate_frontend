@@ -7,6 +7,7 @@ import Navbar from "@/components/Navbar";
 import Image from "next/image";
 import WhiteBoard from "@/components/WhiteBoard";
 import FAQs from "@/components/FAQs";
+import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <>
@@ -18,6 +19,7 @@ export default function Home() {
       <Duels />
       <WhiteBoard />
       <FAQs />
+      <Footer />
     </>
   );
 }
