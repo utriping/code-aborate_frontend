@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 
-const Footer = () => {
+const Footer = ({ className }) => {
   return (
     // <section className="mt-10 bg-[#8E0C25] p-10">
     //   <div className="pb-6 border-b-2 border-[#f3dc1]">
@@ -25,7 +25,7 @@ const Footer = () => {
     //     <div className="flex-1 flex flex-col justify-center items-center">Sign In</div>
     //   </div>
     // </section>
-    <section className="mt-10 bg-[#8E0C25] text-[#F3DFC1]">
+    <section className={`mt-10 bg-[#8E0C25] text-[#F3DFC1] ${className}`}>
       {/* Top branding */}
       <div className="px-10 pt-10 pb-6 border-b border-[#B10F2E]">
         <div className="text-4xl font-bold mb-2">
