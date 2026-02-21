@@ -1,0 +1,78 @@
+# =========================
+# Node.js
+# =========================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Keep ONE lock file (recommended for teams)
+# Remove the ones you don't use
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# =========================
+# Environment Variables
+# =========================
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# =========================
+# Logs
+# =========================
+logs/
+*.log
+
+# =========================
+# Build / Output
+# =========================
+dist/
+build/
+out/
+
+# =========================
+# TypeScript
+# =========================
+*.tsbuildinfo
+
+# =========================
+# Coverage / Testing
+# =========================
+coverage/
+
+# =========================
+# OS Files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Editor / IDE
+# =========================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# =========================
+# Temporary Files
+# =========================
+.tmp/
+.cache/
+
+# =========================
+# Runtime Data (if applicable)
+# =========================
+pids/
+*.pid
+*.seed
+
+# =========================
+# Optional: Uploads (if you store local uploads)
+# =========================
+uploads/
