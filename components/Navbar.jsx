@@ -7,7 +7,7 @@ const Navbar = () => {
       <div className="container mx-auto md:max-w-6xl items-center ">
         <div className="grid grid-cols-2 lg:grid-cols-3 border border-red-300 m-5 p-5 rounded-md  bg-[#B10F2E] items-center ">
           <div className="font-bold text-2xl md:text-3xl text-red-100 whitespace-nowrap">
-            <Link href="#home">{`<Code-aborate>`}</Link>
+            <Link href="/">{`<Code-aborate>`}</Link>
           </div>
 
           <div className="inline-flex justify-end md:hidden">
