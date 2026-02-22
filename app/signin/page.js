@@ -197,28 +197,7 @@ export default function SignIn() {
         style={{ backgroundColor: "#F3DFC1" }}
       >
         {/* Background decorative shapes */}
-        <div
-          className="absolute inset-0 overflow-hidden pointer-events-none"
-          aria-hidden
-        >
-          <div
-            className="absolute -top-32 -right-32 w-96 h-96 rounded-full opacity-10"
-            style={{
-              background: "radial-gradient(circle, #B10F2E, transparent 70%)",
-            }}
-          />
-          <div
-            className="absolute -bottom-24 -left-24 w-80 h-80 rounded-full opacity-8"
-            style={{
-              background: "radial-gradient(circle, #B10F2E, transparent 70%)",
-            }}
-          />
-          <div
-            className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-24 opacity-20"
-            style={{}}
-          />
-          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-px h-24 opacity-20" />
-        </div>
+        
 
         <div
           className="noise-bg card-appear relative w-full max-w-md rounded-3xl shadow-2xl px-8 pt-10 pb-10"
