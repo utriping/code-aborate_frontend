@@ -1,5 +1,5 @@
 "use client";
-import { MoreVertical, Send, Settings, Sword } from "lucide-react";
+import { MoreVertical, Send, SendHorizonal, Settings, Sword } from "lucide-react";
 import React, { useState } from "react";
 
 const page = () => {
@@ -13,7 +13,7 @@ const page = () => {
     { message: "Just working on a project, you?", sentBy: "Raj" },
     { message: "Same here, trying to finish it up.", sentBy: "You" },
     { message: "Do you want to have a duel at 11", sentBy: "You" },
-    { message: "Yeah, would love to", sentBy: "John" },
+    { message: "Yeah, would love to", sentBy: "Raj" },
     { message: "Great, see you then!", sentBy: "You" },
   ];
   const users = [
@@ -37,7 +37,7 @@ const page = () => {
     { name: "Amit", points: 60, message: "Sure, let me take a look at it." },
   ];
   return (
-    <section className="my-10 border border-[#B10F2E] h-screen p-3">
+    <section className="my-10 border border-[#B10F2E] h-screen">
       <div className="grid grid-cols-1 lg:grid-cols-[30%_1fr] h-screen rounded-lg">
         <div className="w-full bg-[#B10F2E] overflow-y-scroll scrollbar-none">
           <div className="h-22 bg-[#B10F2E] text-2xl font-bold p-3 flex flex-cols gap-4 items-center border-b-2 border-[#f3dfc1] border-r-none sticky top-0">
@@ -60,7 +60,9 @@ const page = () => {
               </div>
             );
           })}
-          <div className="">Add more friends to chat with more people</div>
+          <div className="flex-1">
+            Add more friends to chat with more people
+          </div>
         </div>
 
         <div className="hidden lg:block lg:w-full bg-[#B10F2E] border-l-2 border-[#f3dfc1] h-screen overflow-y-scroll scrollbar-none relative">
@@ -68,23 +70,44 @@ const page = () => {
             <div className="rounded-full w-14 h-14 bg-white inline-flex items-center justify-center text-2xl font-bold">
               R
             </div>
-            <div className="text-[#F3DFC1]">Rohit</div>
+            <div className="text-[#F3DFC1]">Raj</div>
             <MoreVertical
               className="ml-auto text-[#F3DFC1] cursor-pointer"
               size={32}
             ></MoreVertical>
           </div>
+          <div className="flex flex-col overflow-y-scroll scrollbar-none">
+            {messages.map((message, index, arr) => {
+              if (message.sentBy === "You") {
+                return (
+                  <div className="flex justify-end px-3 mt-3">
+                    <div className="max-w-[70%] bg-[#8E0C25] text-[#F3DFC1] px-4 py-2 rounded-2xl rounded-br-md text-lg break-words">
+                      {message.message}
+                    </div>
+                  </div>
+                );
+              }
+              return (
+                <div className="flex justify-start px-3 mt-3">
+                  <div className="max-w-[70%] bg-[#F3DFC1] text-[#8E0C25] px-4 py-2 rounded-2xl rounded-bl-md text-lg break-words">
+                    {message.sentBy}: {message.message}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
 
-          {/* chat */}
           {/* send message bar */}
-          <div className="absolute bottom-0 bg-[#8E0C25] w-full flex items-center p-3 text-[#F3DFC1] ">
+          <div className="absolute bottom-0 bg-[#8E0C25] w-full flex items-center p-3 text-[#F3DFC1] text-lg justify-start gap-5">
+            <Sword className="text-[#F3DFC1] cursor-pointer" size={32}/>
             <input
               type="text"
-              className=""
+              className="outline-none flex-1 caret-[#F3DFC1]"
               value={newMessage}
               onChange={(e) => setNewMessage(e.target.value)}
+              placeholder="Send a message..."
             />
-            <Sword className="ml-auto text-[#F3DFC1]" size={32} />
+            <SendHorizonal size={32} className='cursor-pointer'/>
           </div>
         </div>
       </div>

@@ -1,10 +1,10 @@
 import React from 'react'
 
 const page = () => {
-    //generate me a chat page 
+    //generate me a signin page 
   return (
     <section className='mt-10'>
-
+      
     </section>
   )
 }
