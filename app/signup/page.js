@@ -22,9 +22,8 @@ export default function SignIn() {
       }
     }
     console.log(form);
-    const res = await api.post("/sign-up", form);
-    const { success } = res;
-    if (success) {
+    try {
+      const res = await api.post("/sign-up", form);
       setMessage("Account created successfully! Please log in.");
       window.location.href = "/login";
       setForm({
@@ -33,8 +32,10 @@ export default function SignIn() {
         email: "",
         password: "",
       });
-    } else {
-      setMessage("Error creating account. Please try again.");
+    } catch (err) {
+      setMessage(
+        err.response?.data?.error || "An error occurred. Please try again.",
+      );
     }
   }
   const handleChange = (e) => {
