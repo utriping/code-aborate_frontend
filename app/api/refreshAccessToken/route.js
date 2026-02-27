@@ -69,7 +69,7 @@ export async function POST() {
         status: 201,
       },
     );
-    response.cookies.set("access-token", options);
+    response.cookies.set("access-token", newAccessToken, options);
     return response;
   } catch (err) {
     console.log("Error in refreshing access token: ", err);

@@ -80,11 +80,15 @@ export async function POST(req) {
     const userData = user.toObject();
     delete userData.password;
     delete userData.refreshToken;
-    const response = new NextResponse({
-      status: 200,
-      message: "User Logged In successfully",
-      data: userData,
-    });
+    const response = new NextResponse(
+      {
+        message: "User Logged In successfully",
+        data: userData,
+      },
+      {
+        status: 200,
+      },
+    );
     response.cookies.set("refresh-token", newRefreshToken, options);
     response.cookies.set("access-token", newAccessToken, options);
     console.log(response);

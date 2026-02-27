@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import api from "@/lib/axiosRequestConfig";
+import { useEffect, useState } from "react";
 
 export default function SignIn() {
   const [focused, setFocused] = useState(null);
@@ -11,7 +12,31 @@ export default function SignIn() {
     password: "",
   });
   const [showPassword, setShowPassword] = useState(false);
-
+  const [message, setMessage] = useState("");
+  async function handleSubmit(e) {
+    e.preventDefault();
+    for (const key in form) {
+      if (form[key].trim() === "") {
+        setMessage("Please fill in all fields.");
+        return;
+      }
+    }
+    console.log(form);
+    const res = await api.post("/sign-up", form);
+    const { success } = res;
+    if (success) {
+      setMessage("Account created successfully! Please log in.");
+      window.location.href = "/login";
+      setForm({
+        name: "",
+        username: "",
+        email: "",
+        password: "",
+      });
+    } else {
+      setMessage("Error creating account. Please try again.");
+    }
+  }
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
@@ -196,9 +221,6 @@ export default function SignIn() {
         className="signin-wrapper min-h-screen flex items-center justify-center px-4 py-16"
         style={{ backgroundColor: "#F3DFC1" }}
       >
-        {/* Background decorative shapes */}
-        
-
         <div
           className="noise-bg card-appear relative w-full max-w-md rounded-3xl shadow-2xl px-8 pt-10 pb-10"
           style={{
@@ -241,7 +263,10 @@ export default function SignIn() {
 
           {/* Form */}
           <form
-            onSubmit={(e) => e.preventDefault()}
+            onSubmit={(e) => {
+              e.preventDefault();
+              handleSubmit(e);
+            }}
             className="space-y-4"
             noValidate
           >

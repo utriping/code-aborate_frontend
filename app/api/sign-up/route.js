@@ -1,5 +1,5 @@
 //tested and working
-import { connectDb } from "@/lib/connectDB";
+import { connectDb } from "@/lib/connectDB.js";
 import User from "@/models/User.model";
 import mongoose from "mongoose";
 import { NextResponse } from "next/server";
